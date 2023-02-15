@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import "./App.css";
+import { Header } from './components/Header';
+
 
 const App = () => {
   return (
-    <div>
-      hello
+    <div className='w-screen h-auto flex flex-col'>
+      <Header/>
     </div>
   )
 }
