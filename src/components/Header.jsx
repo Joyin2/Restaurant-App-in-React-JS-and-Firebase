@@ -3,7 +3,7 @@ import { IoIosBasket } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Logo from "../img/logo.png";
-import Avatar from "../img/avatar.png"
+import Avatar from "../img/avatar.png";
 
 const Header = () => {
   return (
@@ -35,7 +35,14 @@ const Header = () => {
               <p className="text-xs text-white font-semibold">2</p>
             </div>
           </div>
-          <motion.img whileTap={{scale:0.6}} src={Avatar} alt="userProfile" className="w-10 min-w-[40px] h-10 min-h-[40] cursor-pointer" />
+          <div>
+            <motion.img
+              whileTap={{ scale: 0.6 }}
+              src={Avatar}
+              alt="userProfile"
+              className="w-10 min-w-[40px] h-10 min-h-[40] cursor-pointer"
+            />
+          </div>
         </div>
       </div>
 
