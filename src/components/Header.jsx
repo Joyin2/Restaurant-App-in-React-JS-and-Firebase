@@ -2,10 +2,21 @@ import React from "react";
 import { IoIosBasket } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../firebase.config";
 import Logo from "../img/logo.png";
 import Avatar from "../img/avatar.png";
 
 const Header = () => {
+
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const login = async () =>{
+    const response = await signInWithPopup(firebaseAuth, provider)
+    console.log(response)
+  }
+
+
   return (
     <header className="w-screen fixed z50 p-6 px-16">
       {/* desktop view */}
@@ -35,12 +46,13 @@ const Header = () => {
               <p className="text-xs text-white font-semibold">2</p>
             </div>
           </div>
-          <div>
+          <div className="relative">
             <motion.img
               whileTap={{ scale: 0.6 }}
               src={Avatar}
               alt="userProfile"
               className="w-10 min-w-[40px] h-10 min-h-[40] cursor-pointer"
+              onClick={login}
             />
           </div>
         </div>
